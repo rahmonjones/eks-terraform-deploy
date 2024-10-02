@@ -7,7 +7,7 @@ module "eks" {
   version = "~> 19.0"
 
   cluster_name    = var.cluster_name
-  cluster_version = "1.27"
+  cluster_version = "1.28"
 
   cluster_endpoint_public_access = true
 
@@ -46,12 +46,12 @@ module "eks" {
     node-group-01 = {
       min_size     = 1
       max_size     = 10
-      desired_size = 2
+      desired_size = 3
     }
     node-group-02 = {
       min_size     = 1
       max_size     = 10
-      desired_size = 2
+      desired_size = 3
 
       instance_types = ["t3.large"]
       capacity_type  = "SPOT"
