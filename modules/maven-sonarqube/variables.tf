@@ -18,15 +18,15 @@ variable "key_name" {
   type        = string
 }
 
-variable "security_group_id" {
-  description = "The security group ID to attach to the instance"
-  type        = string
-}
+# variable "security_group_id" {
+#   description = "The security group ID to attach to the instance"
+#   type        = string
+# }
 
-variable "subnet_id" {
-  description = "The subnet ID where the instance will be deployed"
-  type        = string
-}
+# variable "subnet_id" {
+#   description = "The subnet ID where the instance will be deployed"
+#   type        = string
+# }
 
 # variable "db_name" {
 #   description = "The name of the PostgreSQL database"
