@@ -28,28 +28,28 @@ variable "subnet_id" {
   type        = string
 }
 
-variable "db_name" {
-  description = "The name of the PostgreSQL database"
-  type        = string
-}
+# variable "db_name" {
+#   description = "The name of the PostgreSQL database"
+#   type        = string
+# }
 
-variable "db_username" {
-  description = "The username for the PostgreSQL database"
-  type        = string
-}
+# variable "db_username" {
+#   description = "The username for the PostgreSQL database"
+#   type        = string
+# }
 
-variable "db_password" {
-  description = "The password for the PostgreSQL database"
-  type        = string
-  sensitive   = true
-}
+# variable "db_password" {
+#   description = "The password for the PostgreSQL database"
+#   type        = string
+#   sensitive   = true
+# }
 
-variable "db_security_group_id" {
-  description = "The security group ID for the PostgreSQL database"
-  type        = string
-}
+# variable "db_security_group_id" {
+#   description = "The security group ID for the PostgreSQL database"
+#   type        = string
+# }
 
-variable "db_subnet_group" {
-  description = "The subnet group for the PostgreSQL database"
-  type        = string
-}
+# variable "db_subnet_group" {
+#   description = "The subnet group for the PostgreSQL database"
+#   type        = string
+# }
