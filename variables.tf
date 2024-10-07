@@ -98,6 +98,49 @@ variable "key_name" {
   default     = "DevOps_Train2024"
 }
 
+
+# variable "security_group_id" {
+#   description = "The security group ID to attach to the instance"
+#   type        = string
+
+# }
+
+# variable "subnet_id" {
+#   description = "The subnet ID where the instance will be deployed"
+#   type        = string
+#   default     = "subnet-0ea3d234fba84eef9"
+# }
+
+# variable "db_name" {
+#   description = "The name of the PostgreSQL database"
+#   type        = string
+#   default     = "sonarqube"
+# }
+
+# variable "db_username" {
+#   description = "The username for the PostgreSQL database"
+#   type        = string
+#   default     = "sonar"
+# }
+
+# variable "db_password" {
+#   description = "The password for the PostgreSQL database"
+#   type        = string
+#   sensitive   = true
+#   default     = "Team@123"
+# }
+
+# variable "db_security_group_id" {
+#   description = "The security group ID for the PostgreSQL database"
+#   type        = string
+#   default     = "value"
+# }
+
+# variable "db_subnet_group" {
+#   description = "The subnet group for the PostgreSQL database"
+#   type        = string
+# }
+
 # variable "s3_bucket" {
 #   description = "The name of the S3 bucket for storing Terraform state"
 #   type        = string
