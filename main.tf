@@ -100,7 +100,7 @@ module "maven-sonarqube" {
   ami_id        = var.ami_id
   instance_type = var.instance_type
   key_name      = var.key_name
-  main-region   = var.main-region
+  # main-region   = var.main-region
 }
 
 # # module "s3_dynamodb" {
