@@ -106,10 +106,10 @@ variable "security_group_id" {
   default = "sg-062f6f9197dae636e"
 }
 
-variable "subnet_id" {
-  type    = string
-  default = "subnet-036b6ddb502f8eb8a"
-}
+# variable "subnet_id" {
+#   type    = string
+#   default = "subnet-036b6ddb502f8eb8a"
+# }
 
 # variable "security_group_id" {
 #   description = "The security group ID to attach to the instance"
