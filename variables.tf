@@ -106,7 +106,7 @@ variable "security_group_id" {
   default = "sg-062f6f9197dae636e"
 }
 
-vriable "subnet_id" {
+variable "subnet_id" {
   type    = string
   default = "subnet-036b6ddb502f8eb8a"
 }
