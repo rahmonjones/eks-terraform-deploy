@@ -98,48 +98,63 @@ variable "key_name" {
   default     = "DevOps_Train2024"
 }
 
+###########################
+#Sonaqube instance
+##########################
+variable "security_group_id" {
+  type    = string
+  default = "sg-062f6f9197dae636e"
+}
+
+vriable "subnet_id" {
+  type    = string
+  default = "subnet-036b6ddb502f8eb8a"
+}
 
 # variable "security_group_id" {
 #   description = "The security group ID to attach to the instance"
 #   type        = string
 
 # }
+##################
+#sonarqube db 
+###################
+variable "subnet_id" {
+  description = "The subnet ID where the instance will be deployed"
+  type        = string
+  default     = "subnet-0ea3d234fba84eef9"
+}
 
-# variable "subnet_id" {
-#   description = "The subnet ID where the instance will be deployed"
-#   type        = string
-#   default     = "subnet-0ea3d234fba84eef9"
-# }
+variable "db_name" {
+  description = "The name of the PostgreSQL database"
+  type        = string
+  default     = "sonarqube"
+}
 
-# variable "db_name" {
-#   description = "The name of the PostgreSQL database"
-#   type        = string
-#   default     = "sonarqube"
-# }
+variable "db_username" {
+  description = "The username for the PostgreSQL database"
+  type        = string
+  default     = "sonar"
+}
 
-# variable "db_username" {
-#   description = "The username for the PostgreSQL database"
-#   type        = string
-#   default     = "sonar"
-# }
+variable "db_password" {
+  description = "The password for the PostgreSQL database"
+  type        = string
+  sensitive   = true
+  default     = "Team@123"
+}
 
-# variable "db_password" {
-#   description = "The password for the PostgreSQL database"
-#   type        = string
-#   sensitive   = true
-#   default     = "Team@123"
-# }
+variable "db_security_group_id" {
+  description = "The security group ID for the PostgreSQL database"
+  type        = string
+  default     = "sg-0e592ee1b326b5c42"
+}
 
-# variable "db_security_group_id" {
-#   description = "The security group ID for the PostgreSQL database"
-#   type        = string
-#   default     = "value"
-# }
-
-# variable "db_subnet_group" {
-#   description = "The subnet group for the PostgreSQL database"
-#   type        = string
-# }
+variable "db_subnet_group" {
+  description = "The subnet group for the PostgreSQL database"
+  type        = string
+  default     = "default-vpc-0363891b6294839c8"
+}
 
 # variable "s3_bucket" {
 #   description = "The name of the S3 bucket for storing Terraform state"
