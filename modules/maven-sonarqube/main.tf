@@ -1,12 +1,12 @@
-provider "aws" {
-  region = var.region
-}
+# provider "aws" {
+#   region = var.region
+# }
 
 resource "aws_instance" "sonarqube" {
   ami           = var.ami_id
   instance_type = var.instance_type
   key_name      = var.key_name
-  user_data = file("maven_sonarqube.sh")
+  user_data     = file("maven_sonarqube.sh")
 
   tags = {
     Name = "Maven_Sonarqube_Instance"
