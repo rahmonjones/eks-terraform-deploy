@@ -52,10 +52,5 @@ module "maven-sonarqube" {
                }    
           }
      }       
-}   
-
-
-
-
-
-
+  } 
+}
