@@ -27,6 +27,6 @@ resource "aws_db_instance" "postgresql" {
   parameter_group_name   = "default.postgres16"
   skip_final_snapshot    = true
   publicly_accessible    = true
-  vpc_security_group_ids = [var.db_security_group_id]
+  vpc_security_group_ids = var.db_security_group_id
   db_subnet_group_name   = var.db_subnet_group
 }
