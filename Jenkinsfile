@@ -34,12 +34,11 @@ pipeline {
         stage('4.Terraform Deploy') {              
             steps { 
                 echo 'Terraform ${params.Deployment_Type} phase'  
-module "maven-sonarqube" {
                 sh "AWS_REGION=us-west-2 terraform ${params.Deployment_Type}  -target=module.vpc -target=module.eks -target=module.maven-sonarqube --auto-approve"
                 sh("""scripts/update-kubeconfig.sh""")
 //                sh("""scripts/observerbility-addon.sh""")
 //                sh "AWS_REGION=us-west-2 terraform ${params.Deployment_Type} --auto-approve"
-            }
+                }
                 }
         stage ('5. Email Notification') {
             steps {
