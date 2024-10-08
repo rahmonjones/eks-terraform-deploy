@@ -103,7 +103,7 @@ variable "key_name" {
 ##########################
 variable "security_group_id" {
   type    = string
-  default = "sg-062f6f9197dae636e"
+  default = "sg-07b8b3043804ede33"
 }
 
 # variable "subnet_id" {
@@ -147,13 +147,13 @@ variable "db_password" {
 variable "db_security_group_id" {
   description = "The security group ID for the PostgreSQL database"
   type        = list(string)
-  default     = ["sg-0e592ee1b326b5c42"]
+  default     = ["sg-0f424207f7b50b172"]
 }
 
 variable "db_subnet_group" {
   description = "The subnet group for the PostgreSQL database"
   type        = string
-  default     = "default-vpc-0363891b6294839c8"
+  default     = "default-vpc-08dcf780b5e752f2c"
 }
 
 # variable "s3_bucket" {
