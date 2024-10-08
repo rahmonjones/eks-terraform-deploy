@@ -46,7 +46,7 @@ variable "db_password" {
 
 variable "db_security_group_id" {
   description = "The security group ID for the PostgreSQL database"
-  type        = string
+  type    = list(string)
 }
 
 variable "db_subnet_group" {

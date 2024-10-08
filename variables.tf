@@ -146,8 +146,8 @@ variable "db_password" {
 
 variable "db_security_group_id" {
   description = "The security group ID for the PostgreSQL database"
-  type        = string
-  default     = "sg-0e592ee1b326b5c42"
+  type        = list(string)
+  default     = ["sg-0e592ee1b326b5c42"]
 }
 
 variable "db_subnet_group" {
