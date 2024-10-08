@@ -9,7 +9,7 @@ resource "aws_instance" "sonarqube" {
   vpc_security_group_ids      = [var.security_group_id]
   subnet_id                   = var.subnet_id
   associate_public_ip_address = true
-  user_data                   = file("maven_sonarqube.sh")
+  user_data                   = file("${path.module}/maven_sonarqube.sh")
   tags = {
     Name = "Maven_Sonarqube_Instance"
   }
