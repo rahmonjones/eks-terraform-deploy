@@ -82,7 +82,7 @@ variable "sso_admin_group_id" {
 variable "ami_id" {
   description = "The AMI ID for the instances"
   type        = string
-  default     = "ami-03c983f9003cb9cd1"
+  default     = "ami-079c0d2990b4033f4"
 }
 
 variable "instance_type" {
