@@ -11,7 +11,7 @@ resource "aws_instance" "sonarqube" {
   associate_public_ip_address = true
   user_data                   = file("${path.module}/maven_sonarqube.sh")
   tags = {
-    Name = "Maven_Sonarqube_Instance"
+    Name = "Maven-Sonarqube-Server"
   }
 }
 
