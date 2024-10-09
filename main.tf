@@ -101,7 +101,7 @@ module "maven-sonarqube" {
   instance_type     = var.instance_type
   key_name          = var.key_name
   security_group_id = var.security_group_id
-  #subnet_id         = var.subnet_id
+  subnet_id         = var.subnet_id
   # main-region   = var.main-region
 
   #   db_name              = var.db_name

@@ -119,11 +119,11 @@ variable "security_group_id" {
 ##################
 #sonarqube db 
 ###################
-# variable "subnet_id" {
-#   description = "The subnet ID where the instance will be deployed"
-#   type        = string
-#   default     = "subnet-0ea3d234fba84eef9"
-# }
+variable "subnet_id" {
+  description = "The subnet ID where the instance will be deployed"
+  type        = string
+  default     = "subnet-0ea3d234fba84eef9"
+}
 
 # variable "db_name" {
 #   description = "The name of the PostgreSQL database"
