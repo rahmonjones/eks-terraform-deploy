@@ -83,12 +83,20 @@ echo "PostgreSQL installation and setup completed."
 sudo -i -u postgres
 createuser ddsonar
 psql
-ALTER USER ddsonar WITH ENCRYPTED password ’Team@123;
+ALTER USER ddsonar WITH ENCRYPTED password 'Team@123';
 CREATE DATABASE ddsonarqube OWNER ddsonar;
 GRANT ALL PRIVILEGES ON DATABASE ddsonarqube to ddsonar;
 \q
 Exit
 
+
+sysctl -w vm.max_map_count=524288
+
+sysctl -w fs.file-max=131072
+
+ulimit -n 131072
+
+ulimit -u 8192
 # Configure SonarQube to use PostgreSQL
 sudo bash -c "cat <<EOF > /opt/sonarqube/conf/sonar.properties
 sonar.jdbc.username=ddsonar

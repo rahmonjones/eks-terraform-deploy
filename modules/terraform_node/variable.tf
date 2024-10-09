@@ -1,13 +1,13 @@
 variable "ami_id" {
   description = "The AMI ID for the Terraform node"
   type        = string
-  default     = "ami-03c983f9003cb9cd1"
+  default     = "ami-0b8c6b923777519db"
 }
 
 variable "instance_type" {
   description = "The instance type for the Terraform node"
   type        = string
-  default     = "t2.medium"
+  default     = "t2.large"
 }
 
 variable "key_name" {
