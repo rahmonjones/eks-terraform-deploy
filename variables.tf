@@ -119,42 +119,42 @@ variable "security_group_id" {
 ##################
 #sonarqube db 
 ###################
-variable "subnet_id" {
-  description = "The subnet ID where the instance will be deployed"
-  type        = string
-  default     = "subnet-0ea3d234fba84eef9"
-}
+# variable "subnet_id" {
+#   description = "The subnet ID where the instance will be deployed"
+#   type        = string
+#   default     = "subnet-0ea3d234fba84eef9"
+# }
 
-variable "db_name" {
-  description = "The name of the PostgreSQL database"
-  type        = string
-  default     = "sonarqube"
-}
+# variable "db_name" {
+#   description = "The name of the PostgreSQL database"
+#   type        = string
+#   default     = "sonarqube"
+# }
 
-variable "db_username" {
-  description = "The username for the PostgreSQL database"
-  type        = string
-  default     = "sonar"
-}
+# variable "db_username" {
+#   description = "The username for the PostgreSQL database"
+#   type        = string
+#   default     = "sonar"
+# }
 
-variable "db_password" {
-  description = "The password for the PostgreSQL database"
-  type        = string
-  sensitive   = true
-  default     = "Team@123"
-}
+# variable "db_password" {
+#   description = "The password for the PostgreSQL database"
+#   type        = string
+#   sensitive   = true
+#   default     = "Team@123"
+# }
 
-variable "db_security_group_id" {
-  description = "The security group ID for the PostgreSQL database"
-  type        = list(string)
-  default     = ["sg-0f424207f7b50b172"]
-}
+# variable "db_security_group_id" {
+#   description = "The security group ID for the PostgreSQL database"
+#   type        = list(string)
+#   default     = ["sg-0f424207f7b50b172"]
+# }
 
-variable "db_subnet_group" {
-  description = "The subnet group for the PostgreSQL database"
-  type        = string
-  default     = "default-vpc-08dcf780b5e752f2c"
-}
+# variable "db_subnet_group" {
+#   description = "The subnet group for the PostgreSQL database"
+#   type        = string
+#   default     = "default-vpc-08dcf780b5e752f2c"
+# }
 
 # variable "s3_bucket" {
 #   description = "The name of the S3 bucket for storing Terraform state"
