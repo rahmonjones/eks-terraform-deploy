@@ -8,7 +8,7 @@ output "instance_id" {
   value       = aws_instance.sonarqube.id
 }
 
-output "db_instance_endpoint" {
-  description = "The endpoint of the PostgreSQL instance"
-  value       = aws_db_instance.postgresql.endpoint
-}
+# output "db_instance_endpoint" {
+#   description = "The endpoint of the PostgreSQL instance"
+#   value       = aws_db_instance.postgresql.endpoint
+# }
