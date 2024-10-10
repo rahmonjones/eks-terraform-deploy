@@ -1,0 +1,89 @@
+pipeline {
+   { node { label 'terraform-node' } } 
+
+    environment {
+        TF_VERSION = '1.5.0' // Specify the Terraform version
+        TF_VAR_ENV = ''      // Placeholder for environment variable to be set dynamically
+    }
+
+    parameters {
+        choice(name: 'ENV', choices: ['dev', 'qa', 'staging'], description: 'Select the environment to deploy to')
+        choice(name: 'deploy_choice', choices:['apply','destroy'],description:'The deployment type')
+    }
+
+    stages {
+        stage('1.Initialize') {
+            steps {
+                script {
+                    // Set the environment variable based on the user choice
+                    TF_VAR_ENV = params.ENV
+                    
+                    // Select AWS credentials based on the environment
+                    if (TF_VAR_ENV == 'dev') {
+                        env.AWS_CREDENTIALS = 'aws-dev-credentials'
+                    } else if (TF_VAR_ENV == 'qa') {
+                        env.AWS_CREDENTIALS = 'aws-qa-credentials'
+                    } else if (TF_VAR_ENV == 'staging') {
+                        env.AWS_CREDENTIALS = 'aws-staging-credentials'
+                    }
+
+                    echo "Deploying to ${TF_VAR_ENV} environment"
+                }
+            }
+        }
+
+        stage('2. Terraform Init') {
+            steps {
+                withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', credentialsId: env.AWS_CREDENTIALS]]) {
+                    sh """
+                        terraform init -backend-config="path/to/backend-config-${TF_VAR_ENV}.tf"
+                    """
+                }
+            }
+        }
+
+        stage('3. Terraform Plan') {
+            steps {
+                withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', credentialsId: env.AWS_CREDENTIALS]]) {
+                    sh """
+                        terraform plan -var-file="vars/${TF_VAR_ENV}.tfvars"
+                    """
+                }
+            }
+        }
+        stage('4.Manual Approval') {
+            input {
+                message "Should we proceed?"
+                ok "Yes, we should."
+                parameters{
+                    choice (name: 'Manual_Approval', choices: ['Approve','Reject'], description: 'Approve or Reject the deployment')
+                }
+            }
+             steps {
+                echo "Deployment ${Manual_Approval}"
+            }          
+        }
+        stage('5.Terraform Deploy') {
+            steps {
+                withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', credentialsId: env.AWS_CREDENTIALS]]) {
+                    sh """
+                        terraform ${params.deploy_choice} -auto-approve -var-file="vars/${TF_VAR_ENV}.tfvars"
+                    """
+                }
+            }
+        }
+    }
+
+    post {
+        always {
+            echo "Cleaning up workspace..."
+            cleanWs()
+        }
+        success {
+            echo "Deployment to ${TF_VAR_ENV} was successful!"
+        }
+        failure {
+            echo "Deployment to ${TF_VAR_ENV} failed. Check the logs for details."
+        }
+    }
+}
