@@ -35,8 +35,7 @@ pipeline {
             steps { 
                 echo 'Terraform ${params.Deployment_Type} phase'  
                 sh "AWS_REGION=us-west-2 terraform ${params.Deployment_Type} --auto-approve"
-                sh("""scripts/update-kubeconfig.sh""")
-                sh("""scripts/install_helm.sh""") 
+                sh("""scripts/update-kubeconfig.sh""")                
                 }
                 }
         stage ('5. Email Notification') {
