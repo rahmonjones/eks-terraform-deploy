@@ -15,12 +15,12 @@ variable "main-region" {
 
 variable "cluster_name" {
   type    = string
-  default = "dominion-cluster"
+  default = "eks-xplur-cluster"
 }
 
 variable "rolearn" {
   description = "Add admin role to the aws-auth configmap"
-  default     = "arn:aws:iam::322266404742:role/terraform-create-role"
+  default     = "arn:aws:iam::874095679115:role/do-it-all" #"arn:aws:iam::322266404742:role/terraform-create-role"  #"arn:aws:iam::874095679115:role/do-it-al"
 }
 
 # ################################################################################
@@ -33,8 +33,8 @@ variable "env_name" {
 }
 
 ################################################################################
-# EKS Cluster Variables for grafana and prometheus deployment
-################################################################################
+# #EKS Cluster Variables for grafana and prometheus deployment
+# ###############################################################################
 
 # variable "cluster_endpoint" {
 #   type        = string
@@ -54,9 +54,9 @@ variable "env_name" {
 #   sensitive   = true
 # }
 
-# ################################################################################
-# # VPC Variables
-# ################################################################################
+################################################################################
+# VPC Variables
+################################################################################
 
 # variable "vpc_id" {
 #   description = "VPC ID which Load balancers will be  deployed in"
@@ -68,9 +68,9 @@ variable "env_name" {
 #   type        = list(string)
 # }
 
-################################################################################
-# AWS SSO Variables
-################################################################################
+###############################################################################
+#AWS SSO Variables
+###############################################################################
 
 # variable "sso_admin_group_id" {
 #   description = "AWS_SSO Admin Group ID"

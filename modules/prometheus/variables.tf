@@ -15,7 +15,7 @@ variable "env_name" {
 
 variable "cluster_name" {
   type    = string
-  default = "tf-cluster"
+  default = "xplur-cluster"
 }
 
 variable "oidc_provider_arn" {

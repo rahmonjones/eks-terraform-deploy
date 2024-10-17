@@ -62,9 +62,9 @@ output "private_subnets" {
 #   value       = module.prometheus.workspace_prometheus_endpoint
 # }
 
-# ################################################################################
-# # Grafana Workspace
-# ################################################################################
+# # ################################################################################
+# # # Grafana Workspace
+# # ################################################################################
 
 # output "grafana_workspace_arn" {
 #   description = "The Amazon Resource Name (ARN) of the Grafana workspace"
