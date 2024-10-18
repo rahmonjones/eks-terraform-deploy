@@ -44,4 +44,5 @@ echo "Updating Helm repositories..."
 helm repo update
 
 echo "Helm installation completed!"
+echo "Thank you"
 

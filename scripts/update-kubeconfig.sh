@@ -13,5 +13,6 @@ if aws eks list-clusters --region us-west-2 --output text | grep -q "eks-xplur-c
     fi
 else
     echo "Error: eks-xplur-cluster does not exist"
+    echo "Try again"
     exit 1
 fi
